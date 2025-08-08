@@ -52,7 +52,7 @@ function App() {
   return (
     <FavoritesProvider>
       <div className='dark'>
-
+        ok
       </div>
     </FavoritesProvider>
   )

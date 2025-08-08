@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FavoriteContext } from "../contexts/contexts";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 // export const FavoriteContext = createContext<FavoritesContextType>({
 //   recipeIDArray: [],
@@ -9,27 +10,32 @@ import { FavoriteContext } from "../contexts/contexts";
 // });
 
 export const FavoritesProvider = ({ children }: React.PropsWithChildren) => {
-  const favoriteSetInit = new Set<string>();
-  const [favoriteIDSet, setFavoriteIDSet] = useState<Set<string>>(favoriteSetInit);
-  
-  const addRecipe = (recipeID: string) => {
-    setFavoriteIDSet(prev => {
-      const tempSet = new Set<string>([...prev, recipeID]);
-      return tempSet;
-    });
-  };
+  const [favoriteIDSet, setFavoriteIDSet] = useLocalStorage('favoriteRecipes', {});
 
-  const removeRecipe = (recipeID: string) => {
-    setFavoriteIDSet(prev => {
-      const tempSet = new Set<string>([...prev]);
-      tempSet.delete(recipeID);
-      return tempSet;
-    })
-  };
+  console.log(favoriteIDSet);
+  console.log(setFavoriteIDSet);
 
-  const isListedInFavorites = (recipeID: string) => {
-    return favoriteIDSet.has(recipeID);
-  }
+  // const addRecipe = (recipeID: string) => {
+  //   setFavoriteIDSet((prev: any) => {
+  //     return {...prev, recipeID: true};
+  //   });
+  // };
+
+  // const removeRecipe = (recipeID: string) => {
+  //   setFavoriteIDSet(prev => {
+  //     const tempSet = new Set<string>([...prev]);
+  //     tempSet.delete(recipeID);
+  //     return tempSet;
+  //   })
+  // };
+
+  // const isListedInFavorites = (recipeID: string) => {
+  //   return favoriteIDSet.has(recipeID);
+  // }
+
+  const addRecipe = (recipeID: string) => { };
+  const removeRecipe = (recipeID: string) => { };
+  const isListedInFavorites = (recipeID: string) => false;
 
   const FavoriteContextValue = {
     favoriteIDSet,

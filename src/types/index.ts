@@ -1,5 +1,5 @@
 export interface FavoritesContextType {
-  favoriteIDSet: Set<string>;
+  favoriteIDSet: any;
   addRecipe: (recipeID: string) => void;
   removeRecipe: (recipeID: string) => void;
   isListedInFavorites: (recipeID: string) => boolean;

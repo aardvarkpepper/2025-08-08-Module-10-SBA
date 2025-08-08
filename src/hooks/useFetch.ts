@@ -19,6 +19,8 @@
 
   I think 'loading' may be used to set the state of display, but typically fetch requests are very fast.  I'll have to set up a setTimeout function or such to test (and display functionality of) a loading spinner.  Assignment states 'Your application should manage loading and error states gracefully, displaying appropriate UI indicators to the user (e.g., a loading spinner, an error message).'
 
+  Note:  Error handling is internal, so nice there.
+
 });
  */
 
