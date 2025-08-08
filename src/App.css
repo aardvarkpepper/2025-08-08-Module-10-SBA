@@ -1,42 +1,116 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  font-size: 2rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+li {
+  width: 200px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.outercontainer {
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.flexh {
+  display: flex;
 }
 
-.card {
-  padding: 2em;
+.ai-center {
+  align-items: center;
 }
 
-.read-the-docs {
-  color: #888;
+.jc-spacebetween {
+  justify-content: space-between;
+}
+
+.jc-spacearound {
+  justify-content: space-around;
+}
+
+.nobullet {
+  list-style-type: none;
+}
+
+.width600 {
+  width: 1200px;
+}
+
+.dark {
+  background-color: #000033;
+  color: #FFFFDD;
+}
+
+button {
+  border: 1px solid black;
+}
+
+.dark button {
+  border: 1px solid white;
+  background-color: #003333;
+  color: #FFFF33;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container2 {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.activebutton {
+  background-color: blue;
+  color: white;
+}
+
+.dark .activebutton {
+  background-color: darkslategray;
+}
+
+.flexspec {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.widthhalf {
+  width: 800px;
+  border: 1px solid black;
+}
+
+.dark .widthhalf {
+  border: 1px solid white;
+}
+
+.nth-child:nth-child(even) {
+  background-color: azure;
+}
+
+.dark .nth-child:nth-child(even) {
+  background-color: darkblue;
+  width: 800px;
+}
+
+.heightline {
+  height: 60px;
+}
+
+.checkbox {
+  height: 30px;
+  width: 30px;
+}
+
+.blogpost {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 250ms ease-in, visibility 0ms ease-in 250ms;
+}
+
+.blogpost.fade{
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0ms;
 }
