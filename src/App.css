@@ -103,7 +103,7 @@ button {
   width: 30px;
 }
 
-.blogpost {
+/* .blogpost {
   visibility: hidden;
   opacity: 0;
   transition: opacity 250ms ease-in, visibility 0ms ease-in 250ms;
@@ -113,4 +113,4 @@ button {
   visibility: visible;
   opacity: 1;
   transition-delay: 0ms;
-}
+} */

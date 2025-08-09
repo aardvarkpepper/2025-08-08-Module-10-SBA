@@ -18,3 +18,6 @@ https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
 https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html
 https://www.geeksforgeeks.org/typescript/typescript-object-readonly-tuple-types/
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+
+When useFetch successfully retrieved data but did not render (per console.log), used Gemini AI to suggest debug; used optional chaining.

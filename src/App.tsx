@@ -1,17 +1,50 @@
 import { Routes, Route, Link } from 'react-router-dom';
+import { useState } from 'react';
 
 import { FavoritesProvider } from './providers/FavoritesProvider';
 import { Test } from './components/Test/Test';
+
+import { HomePage } from './pages/HomePage/HomePage';
+import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import './App.css';
 
-function App() {
+// design decision, dark mode in app inside favoritesprovider-  shouldn't affect render.
+const App = () => {
+  console.log('render');
 
+  const [theme, setTheme] = useState('dark');
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  }
+
+  // note - there seems to be some delay when toggling theme.  Render count is not unusually high.  Possibly pop in a useEffect with no dependencies, look up how to track renders of sub-components somehow?
   return (
     <FavoritesProvider>
-      <div className='dark'>
+      <div className={`${theme}`}>
+        <button onClick={toggleTheme}>Deactivate {theme} mode</button>
         <Test />
       </div>
-    </FavoritesProvider>
+      <nav>
+        <div>
+          <input type='text'></input>
+          <button>Search recipe by name</button>
+        </div>
+        <ul>
+          <li><Link to="/">Home Page</Link></li>
+          {/* <li><Link to="/category/:categoryName">Category Page</Link></li>
+          <li><Link to="/recipe/:recipeID">Recipe Detail Page</Link></li> */}
+          <li><Link to="/favorites">Favorites Page</Link></li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        {/* <Route path="/admin" element={<AdminPage />} />
+        <Route path="/login" element={<LogInButton />} />
+        <Route path="/blog/*" element={<BlogList blogPosts={blogPosts} />} />
+        <Route path="/blog/:id" element={<Blog blogPosts={blogPosts} />} /> */}
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </FavoritesProvider >
   )
 }
 
