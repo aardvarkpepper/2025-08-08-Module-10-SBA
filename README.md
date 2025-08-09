@@ -10,6 +10,11 @@ A brief explanation of a design decision you made (e.g., why you structured a ho
 
 ## Resources
 
-Used code I'd written in Module 10 Lab 2 and Module 10 Lab 4 as templates.
+Used code I'd written in Module 10 Lab 2 and Lab 4 as templates.
 Used Module 10 Lesson 4 code as a template.
+Assistant Instructor Bryan Santos suggested using 'as const' to fix 'This expression is not callable.' in FavoritesProvider working through useLocalStorage.
 https://www.themealdb.com/api.php
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
+https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html
+https://www.geeksforgeeks.org/typescript/typescript-object-readonly-tuple-types/

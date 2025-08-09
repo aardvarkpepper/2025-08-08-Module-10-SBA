@@ -1,5 +1,21 @@
-import './App.css';
+import { Routes, Route, Link } from 'react-router-dom';
+
 import { FavoritesProvider } from './providers/FavoritesProvider';
+import { Test } from './components/Test/Test';
+import './App.css';
+
+function App() {
+
+  return (
+    <FavoritesProvider>
+      <div className='dark'>
+        <Test />
+      </div>
+    </FavoritesProvider>
+  )
+}
+
+export default App;
 
 /**
  * 
@@ -46,16 +62,3 @@ Search meal by name: https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabi
 
 Focus on deliverables, or whatever it's called when writing one bit of code at a time where results can be visualized.
  */
-
-function App() {
-
-  return (
-    <FavoritesProvider>
-      <div className='dark'>
-        ok
-      </div>
-    </FavoritesProvider>
-  )
-}
-
-export default App;

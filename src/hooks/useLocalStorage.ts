@@ -29,5 +29,5 @@ export const useLocalStorage = <T>(key: string, initialValue: T) => {
 
   console.log(storedData);
   console.log(setStoredData);
-  return [storedData, setStoredData];
+  return [storedData, setStoredData] as const;
 }
