@@ -38,7 +38,7 @@ const App = () => {
       </nav>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/admin" element={<AdminPage />} />
+        {/* <Route path="/category/:categoryName" element={<CategoryPage />} />
         <Route path="/login" element={<LogInButton />} />
         <Route path="/blog/*" element={<BlogList blogPosts={blogPosts} />} />
         <Route path="/blog/:id" element={<Blog blogPosts={blogPosts} />} /> */}

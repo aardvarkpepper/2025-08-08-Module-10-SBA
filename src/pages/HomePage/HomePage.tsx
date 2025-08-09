@@ -21,15 +21,17 @@ export const HomePage = () => {
 
   const { data, loading, error } = useFetch(`https://www.themealdb.com/api/json/v1/1/categories.php`);
   if (loading) {
+    console.log('HomePage loading')
     return <div>Loading</div>;
   }
   if (error) {
+    console.log('HomePage error')
     return <div>Error: {error.message}</div>;
   }
   if (!data?.categories) {
+    console.log ('Homepage data or categories not found.')
     return <div>Data or categories not found.</div>;
   }
-
 
   return (
     <div>
