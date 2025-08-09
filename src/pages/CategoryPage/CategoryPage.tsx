@@ -4,14 +4,20 @@ import { useFetch } from '../../hooks/useFetch';
 export const CategoryPage = () => {
 
   let { categoryName } = useParams();
+  // console.log('categoryName:', categoryName);
 
-  const { data, loading, error } = useFetch(`www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`);
+  // console.log('fetching', `www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`);
+
+  // const { data, loading, error } = useFetch(`www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`);
+    const { data, loading, error } = useFetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`);
+
   if (loading) {
     console.log('CategoryPage loading')
     return <div>Loading</div>;
   }
   if (error) {
     console.log('CategoryPage error')
+    console.log(`CategoryPage data: ${JSON.parse(data)}`);
     return <div>Error: {error.message}</div>;
   }
   if (!data?.meals) {
@@ -34,6 +40,7 @@ export const CategoryPage = () => {
 }
 
 /**
+ * https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
  * {
 "meals": [
 {

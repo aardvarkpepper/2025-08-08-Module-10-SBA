@@ -41,6 +41,7 @@ export const HomePage = () => {
             <h2>{category.strCategory}</h2>
             <img src={category.strCategoryThumb} alt={category.strCategory} />
             <div>{category.strCategoryDescription}</div>
+            <Link to={`/category/${category.strCategory}`}>Look at {category.strCategory}</Link>
           </div>
         )
       })}

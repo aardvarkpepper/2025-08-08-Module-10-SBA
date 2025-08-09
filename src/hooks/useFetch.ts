@@ -34,14 +34,15 @@ export const useFetch = (url: string, options?: RequestInit) => {
   useEffect(() => {
     if (!url) return; // Don't fetch if URL is not provided
  
-    const controller = new AbortController(); // For cleanup
+    // const controller = new AbortController(); // For cleanup
     setData(null); // Reset data on new fetch
     setError(null); // Reset error on new fetch
     setLoading(true);
  
     const fetchData = async () => {
       try {
-        const response = await fetch(url, { ...options, signal: controller.signal });
+        // const response = await fetch(url, { ...options, signal: controller.signal });
+        const response = await fetch(url, { ...options});
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -60,7 +61,7 @@ export const useFetch = (url: string, options?: RequestInit) => {
  
     // Cleanup function
     return () => {
-      controller.abort();
+      // controller.abort();
     };
   }, [url, options]); // Re-run if url or options change
  

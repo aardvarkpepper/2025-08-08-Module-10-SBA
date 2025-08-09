@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { FavoritesProvider } from './providers/FavoritesProvider';
 import { Test } from './components/Test/Test';
 
+import { CategoryPage } from './pages/CategoryPage/CategoryPage';
 import { HomePage } from './pages/HomePage/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import './App.css';
@@ -38,8 +39,8 @@ const App = () => {
       </nav>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/category/:categoryName" element={<CategoryPage />} />
-        <Route path="/login" element={<LogInButton />} />
+        <Route path="/category/:categoryName" element={<CategoryPage />} />
+        {/* <Route path="/login" element={<LogInButton />} />
         <Route path="/blog/*" element={<BlogList blogPosts={blogPosts} />} />
         <Route path="/blog/:id" element={<Blog blogPosts={blogPosts} />} /> */}
         <Route path="*" element={<NotFoundPage />} />
