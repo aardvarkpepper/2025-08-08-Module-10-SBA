@@ -11,7 +11,10 @@
 
 // const hamster = JSON.parse('ham');
 // console.log(hamster);
-const hamster = new Set();
-console.log(hamster);
-console.log(JSON.stringify(hamster));
-console.log(JSON.parse(JSON.stringify(hamster))); // strips the 'set'.
+// const hamster = new Set();
+// console.log(hamster);
+// console.log(JSON.stringify(hamster));
+// console.log(JSON.parse(JSON.stringify(hamster))); // strips the 'set'.
+
+const waggy = 'https://www.youtube.com/watch?v=4aZr5hZXP_s'
+console.log(waggy.slice(32));

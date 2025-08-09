@@ -21,3 +21,6 @@ https://www.geeksforgeeks.org/typescript/typescript-object-readonly-tuple-types/
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
 
 When useFetch successfully retrieved data but did not render (per console.log), used Gemini AI to suggest debug; used optional chaining.
+
+https://www.w3schools.com/html/html_youtube.asp
+https://forum.freecodecamp.org/t/youtube-refused-to-connect/245262

@@ -7,6 +7,7 @@ import { Test } from './components/Test/Test';
 import { CategoryPage } from './pages/CategoryPage/CategoryPage';
 import { HomePage } from './pages/HomePage/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
+import { RecipeDetailPage } from './pages/RecipeDetailPage/RecipeDetailPage';
 import './App.css';
 
 // design decision, dark mode in app inside favoritesprovider-  shouldn't affect render.
@@ -40,6 +41,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/category/:categoryName" element={<CategoryPage />} />
+        <Route path="/recipe/:recipeId" element={<RecipeDetailPage />} />
         {/* <Route path="/login" element={<LogInButton />} />
         <Route path="/blog/*" element={<BlogList blogPosts={blogPosts} />} />
         <Route path="/blog/:id" element={<Blog blogPosts={blogPosts} />} /> */}
