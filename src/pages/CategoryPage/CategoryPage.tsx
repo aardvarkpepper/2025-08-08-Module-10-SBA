@@ -32,6 +32,7 @@ export const CategoryPage = () => {
           <div key={`meal-${meal.idMeal}`}>
             <h2>{meal.strMeal}</h2>
             <img src={meal.strMealThumb} alt={meal.strMeal} />
+            <Link to={`/recipe/${meal.idMeal}`}>Look at {meal.strMeal}</Link>
           </div>
         )
       })}
