@@ -67,6 +67,15 @@ span.dark {
   margin-right: 1.5rem;
 }
 
+.img-float-right {
+  float: right;
+  margin-left: 1.5rem;
+}
+
+.clear {
+  clear: both;
+}
+
 .dark {
   background-color: #000033;
   color: #FFFFDD;
@@ -106,12 +115,25 @@ ul {
   border: 1px solid black;
 }
 
+.fontheavy {
+  font-weight:700;
+  text-decoration: underline;
+}
+
 .height-special {
   min-height: 300px;
 }
 
 .dark .border-container {
   border: 1px solid yellow;
+}
+
+.padding-plus {
+  padding-left: 3rem;
+}
+.video-container {
+  margin-top: 100px;
+  margin-right: 400px;
 }
 
 .activebutton {
