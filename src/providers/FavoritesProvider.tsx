@@ -1,13 +1,5 @@
-import { useState } from "react";
 import { FavoriteContext } from "../contexts/contexts";
 import { useLocalStorage } from "../hooks/useLocalStorage";
-
-// export const FavoriteContext = createContext<FavoritesContextType>({
-//   recipeIDArray: [],
-//   addRecipe: (recipeID: string) => {},
-//   removeRecipe: (recipeID: string) => {},
-//   isListedInFavorites: (recipeId: string) => false
-// });
 
 export const FavoritesProvider = ({ children }: React.PropsWithChildren) => {
   const [favoriteIDSet, setFavoriteIDSet] = useLocalStorage('favoriteRecipes', {});
@@ -29,10 +21,6 @@ export const FavoritesProvider = ({ children }: React.PropsWithChildren) => {
   const isListedInFavorites = (recipeID: string) => {
     return !!(favoriteIDSet as any)[recipeID];
   }
-
-  // const addRecipe = (recipeID: string) => { };
-  // const removeRecipe = (recipeID: string) => { };
-  // const isListedInFavorites = (recipeID: string) => false;
 
   const FavoriteContextValue = {
     favoriteIDSet,

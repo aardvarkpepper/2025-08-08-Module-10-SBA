@@ -8,7 +8,7 @@ export const FavoritesPage = () => {
   const favoriteRecipes = Object.entries(favoriteIDSet);
 
   if (favoriteRecipes.length === 0) {
-    return <div>You have not marked any recipes as favorites yet!  Would you like to browse and add some?</div>
+    return <div>You have not marked any recipes as favorites yet!  You can add favorites when viewing various specific recipes.</div>
   }
 
   return (

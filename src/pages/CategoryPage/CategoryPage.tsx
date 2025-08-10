@@ -14,6 +14,8 @@ export const CategoryPage = () => {
     return <div>Error: {error.message}</div>;
   } else if (!data) {
     return <span className='loader'></span>;
+  } else if (data.meals === null) {
+    return <div>Data or category not found.</div>
   }
   // else if (!data) {
   //   return <div>Data or categories not found.</div>;
