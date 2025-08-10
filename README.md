@@ -6,7 +6,7 @@ Source:  https://tech.forums.softwareag.com/t/the-ultimate-developer-jokes-threa
 
 What challenge there was, was typically implementing things I hadn't implemented before, or implementing things in different ways, in absence of a template to follow.
 
-For example, I knew useFetch worked to retrieve data (confirmed with console.log), but I hadn't integrated it into a component before.  When data didn't render, I initially thought it might be a React state issue, so I put in async functionality, but then I realized useFetch itself passed state and used async.  Provided there's an initial state, even in useFetch, that doesn't trigger a rendering error, first the initial state should show, then the data is retrieved async, then state updates, so the component using useFetch should update as well.  (Confirmed through testing; though the state change isn't visible as it happens too fast.)  So I broke down the non-rendering issue through console.logs (the process being made faster by use of Gemini AI, though I think not much), and eventually used data?.categories, which fixed the issue.
+For example - I knew useFetch worked to retrieve data (confirmed with console.log), but I hadn't integrated it into a component before.  When data didn't render, I initially thought it might be a React state issue, so I put in async functionality, but then I realized useFetch itself passed state, not merely the value of state, and used async internally.  Provided there's an initial state, even in useFetch, that doesn't trigger a rendering error, first the initial state should show, then the data is retrieved async, then state updates, so the component using useFetch should update as well.  (Confirmed through testing; though the state change sometimes isn't visible as it happens too fast.)  So I broke down the non-rendering issue through console.logs (the process being made faster by use of Gemini AI, though I think not much), and eventually used data?.categories, which fixed the issue.
 
 Thinking about explaining design decisions I made, I conclude I don't make design decisions, so much as conform to instructions, best practices, and provided examples.  For example, it's not a design decision for me to use AbortController; it's more a matter of 'sure, why not let's use this'.
 
@@ -34,3 +34,8 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content
 https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content_function
 https://www.w3schools.com/css/css_list.asp
 https://www.w3schools.com/css/css_float.asp
+
+Trash can icon from Google Material Design
+
+https://fonts.google.com/icons
+https://create-react-app.dev/docs/adding-images-fonts-and-files/

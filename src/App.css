@@ -108,6 +108,17 @@ ul {
   flex-wrap: wrap;
 }
 
+.border-container-small {
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  margin: 0.25rem;
+}
+
+.dark .border-container-small {
+  border: 1px solid white;
+}
+
 .border-container {
   margin: 1rem 2rem;
   padding: 1.5rem;
@@ -166,14 +177,15 @@ ul {
 
 .dark .nth-child:nth-child(even) {
   background-color: darkblue;
-  width: 800px;
 }
 
-.heightline {
-  height: 60px;
+.trash-icon-button {
+  padding: 0;
+  height: 2.5rem;
+  width: 1.2em;
+  background-color: #003333;;
 }
 
-.checkbox {
-  height: 30px;
-  width: 30px;
+.width-special {
+  width: 25rem;
 }
