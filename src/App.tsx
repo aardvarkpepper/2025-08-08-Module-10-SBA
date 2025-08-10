@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 import { FavoritesProvider } from './providers/FavoritesProvider';
@@ -9,6 +9,7 @@ import { FavoritesPage } from './pages/FavoritesPage/FavoritesPage';
 import { HomePage } from './pages/HomePage/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import { RecipeDetailPage } from './pages/RecipeDetailPage/RecipeDetailPage';
+import { SearchResultsPage } from './pages/SearchResultsPage/SearchResultsPage';
 import './App.css';
 
 // design decision, dark mode in app inside favoritesprovider-  shouldn't affect render.
@@ -16,21 +17,30 @@ const App = () => {
   console.log('render');
 
   const [theme, setTheme] = useState('dark');
+  const [recipeNameInput, setRecipeNameInput] = useState('');
+  const navigate = useNavigate();
+
   const toggleTheme = () => {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  }
+
+  const handleChangeRecipeNameInput = (event: any) => {
+    setRecipeNameInput(event.target.value);
+  }
+
+  const handleSubmitRecipeNameInput = () => {
+    navigate(`/search/${recipeNameInput}`);
   }
 
   // note - there seems to be some delay when toggling theme.  Render count is not unusually high.  Possibly pop in a useEffect with no dependencies, look up how to track renders of sub-components somehow?
   return (
     <FavoritesProvider>
-      <div className={`${theme}`}>
+      <div className={`${theme} outercontainer`}>
         <button onClick={toggleTheme}>Deactivate {theme} mode</button>
-        <Test />
-
         <nav>
-          <div>
-            <input type='text'></input>
-            <button>Search recipe by name</button>
+          <div className='flexh'>
+            <input type='text' value={recipeNameInput} onChange={handleChangeRecipeNameInput}></input>
+            <button onClick={handleSubmitRecipeNameInput}>Search recipe by name</button>
           </div>
           <ul>
             <li><Link to="/">Home Page</Link></li>
@@ -44,7 +54,7 @@ const App = () => {
           <Route path="/category/:categoryName" element={<CategoryPage />} />
           <Route path="/recipe/:recipeId" element={<RecipeDetailPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
-          {/* <Route path="/search/:recipeName" element={<SearchResultsPage />} */}
+          <Route path="/search/:recipeName" element={<SearchResultsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>

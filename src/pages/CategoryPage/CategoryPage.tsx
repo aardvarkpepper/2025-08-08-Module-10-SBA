@@ -30,9 +30,8 @@ export const CategoryPage = () => {
       {(data as any).meals.map((meal: any) => {
         return (
           <div key={`meal-${meal.idMeal}`}>
-            <h2>{meal.strMeal}</h2>
+            <h2><Link to={`/recipe/${meal.idMeal}`}>{meal.strMeal}</Link></h2>
             <img src={meal.strMealThumb} alt={meal.strMeal} />
-            <Link to={`/recipe/${meal.idMeal}`}>Look at {meal.strMeal}</Link>
           </div>
         )
       })}

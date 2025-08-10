@@ -29,22 +29,24 @@ export const HomePage = () => {
     return <div>Error: {error.message}</div>;
   }
   if (!data?.categories) {
-    console.log ('Homepage data or categories not found.')
+    console.log('Homepage data or categories not found.')
     return <div>Data or categories not found.</div>;
   }
 
   return (
     <div>
-      {(data as any).categories.map((category: any) => {
-        return (
-          <div key={`category-${category.idCategory}`}>
-            <h2>{category.strCategory}</h2>
-            <img src={category.strCategoryThumb} alt={category.strCategory} />
-            <div>{category.strCategoryDescription}</div>
-            <Link to={`/category/${category.strCategory}`}>Look at {category.strCategory}</Link>
-          </div>
-        )
-      })}
+      <ul className='noBullet'>
+        {(data as any).categories.map((category: any) => {
+          return (
+            <li key={`category-${category.idCategory}`} className='nobullet'>
+              <h2><Link to={`/category/${category.strCategory}`}>{category.strCategory}</Link></h2>
+              <img src={category.strCategoryThumb} alt={category.strCategory} />
+              <div>{category.strCategoryDescription}</div>
+              {/* <Link to={`/category/${category.strCategory}`}>Look at {category.strCategory}</Link> */}
+            </li>
+          )
+        })}
+      </ul>
     </div>
   )
   // }
