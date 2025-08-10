@@ -42,11 +42,11 @@ export const RecipeDetailPage = () => {
       <div>Category: {mealRef.strCategory}</div>
       <div>Area: {mealRef.strArea}</div>
       <div>Instructions: {mealRef.strInstructions}</div>
-      <img src={mealRef.strMealThumb} alt={mealRef.strMeal} />
+      {mealRef.strMealThumb ? <img src={mealRef.strMealThumb} alt={mealRef.strMeal} /> : null}
       <div>Tags: {mealRef.strTags}</div>
-      <iframe width="420" height="315"
+      {mealRef.strYoutube ? <iframe width="420" height="315"
         src={`https://www.youtube.com/embed/${mealRef.strYoutube.slice(32)}`}>
-      </iframe>
+      </iframe> : null}
       <ul>
         {ingredientArray.map(ingredient => ingredient[0] ? <li key={`${mealRef.idMeal}-${ingredient[0]}`}>{ingredient[0]}: {ingredient[1]}</li> : null)}
       </ul>

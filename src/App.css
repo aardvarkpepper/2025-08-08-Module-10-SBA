@@ -4,6 +4,7 @@ body {
 
 h2 {
   margin-top: 0px;
+  margin-left: 1.5rem;
 }
 
 input {
@@ -61,7 +62,7 @@ span.dark {
   list-style-type: none;
 }
 
-img {
+.img-float {
   float:left;
   margin-right: 1.5rem;
 }
@@ -73,6 +74,10 @@ img {
 
 button {
   border: 1px solid black;
+}
+
+ul {
+  padding: 0;
 }
 
 .dark button {
@@ -87,8 +92,15 @@ button {
   justify-content: center;
 }
 
+.container-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .border-container {
-  margin: 1rem;
+  margin: 1rem 2rem;
   padding: 1.5rem;
   border-radius: 1rem;
   border: 1px solid black;
@@ -143,15 +155,3 @@ button {
   height: 30px;
   width: 30px;
 }
-
-/* .blogpost {
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 250ms ease-in, visibility 0ms ease-in 250ms;
-}
-
-.blogpost.fade{
-  visibility: visible;
-  opacity: 1;
-  transition-delay: 0ms;
-} */

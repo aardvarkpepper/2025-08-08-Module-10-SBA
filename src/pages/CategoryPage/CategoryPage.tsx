@@ -27,14 +27,17 @@ export const CategoryPage = () => {
 
   return (
     <div>
+      <h2>Category: {categoryName}</h2>
+      <ul className='container-wrap'>
       {(data as any).meals.map((meal: any) => {
         return (
-          <div key={`meal-${meal.idMeal}`}>
+          <li key={`meal-${meal.idMeal}`} className='nobullet border-container'>
             <h2><Link to={`/recipe/${meal.idMeal}`}>{meal.strMeal}</Link></h2>
-            <img src={meal.strMealThumb} alt={meal.strMeal} />
-          </div>
+            {meal.strMealThumb ? <img src={meal.strMealThumb} alt={meal.strMeal}/> : null}
+          </li>
         )
       })}
+      </ul>
     </div>
   )
 }

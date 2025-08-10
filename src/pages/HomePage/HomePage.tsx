@@ -41,7 +41,7 @@ export const HomePage = () => {
             <li key={`category-${category.idCategory}`} className='nobullet border-container height-special'>
                   <h2><Link to={`/category/${category.strCategory}`}>{category.strCategory}</Link></h2>
                 <div>
-                  <img src={category.strCategoryThumb} alt={category.strCategory} />
+                  <img src={category.strCategoryThumb} alt={category.strCategory} className='img-float'/>
                   <div>{category.strCategoryDescription}</div>
                 </div>
               <br />
