@@ -12,7 +12,7 @@ export const RecipeDetailPage = () => {
 
   const { data, loading, error } = useFetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`);
 
-  console.log('RDP attempting fetch', `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`)
+  //console.log('RDP attempting fetch', `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`)
 
   if (loading) {
     console.log('RecipeDetailPage loading')

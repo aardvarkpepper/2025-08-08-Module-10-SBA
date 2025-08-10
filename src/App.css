@@ -2,8 +2,38 @@ body {
   font-size: 2rem;
 }
 
-li {
-  width: 200px;
+h2 {
+  margin-top: 0px;
+}
+
+input {
+  font-size: 2rem;
+}
+
+.li-nav {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0.5rem;
+  list-style-position: inside;
+  width: 18rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  background-color: azure;
+  text-align: center;
+}
+
+.li-nav.dark {
+  border: 1px solid yellow;
+  background-color: #003333;
+}
+
+.dark a {
+  color: #FFFF33;
+}
+
+span.dark {
+  background-color: #003333;
+  color: #FFFF33;
 }
 
 .outercontainer {
@@ -31,8 +61,9 @@ li {
   list-style-type: none;
 }
 
-.width600 {
-  width: 1200px;
+img {
+  float:left;
+  margin-right: 1.5rem;
 }
 
 .dark {
@@ -56,9 +87,19 @@ button {
   justify-content: center;
 }
 
-.container2 {
-  min-width: 100vw;
-  min-height: 100vh;
+.border-container {
+  margin: 1rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid black;
+}
+
+.height-special {
+  min-height: 300px;
+}
+
+.dark .border-container {
+  border: 1px solid yellow;
 }
 
 .activebutton {

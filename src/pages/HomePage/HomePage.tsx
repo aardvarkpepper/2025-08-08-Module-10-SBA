@@ -38,11 +38,13 @@ export const HomePage = () => {
       <ul className='noBullet'>
         {(data as any).categories.map((category: any) => {
           return (
-            <li key={`category-${category.idCategory}`} className='nobullet'>
-              <h2><Link to={`/category/${category.strCategory}`}>{category.strCategory}</Link></h2>
-              <img src={category.strCategoryThumb} alt={category.strCategory} />
-              <div>{category.strCategoryDescription}</div>
-              {/* <Link to={`/category/${category.strCategory}`}>Look at {category.strCategory}</Link> */}
+            <li key={`category-${category.idCategory}`} className='nobullet border-container height-special'>
+                  <h2><Link to={`/category/${category.strCategory}`}>{category.strCategory}</Link></h2>
+                <div>
+                  <img src={category.strCategoryThumb} alt={category.strCategory} />
+                  <div>{category.strCategoryDescription}</div>
+                </div>
+              <br />
             </li>
           )
         })}

@@ -30,3 +30,7 @@ When useFetch successfully retrieved data but did not render (per console.log), 
 
 https://www.w3schools.com/html/html_youtube.asp
 https://forum.freecodecamp.org/t/youtube-refused-to-connect/245262
+https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content
+https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content_function
+https://www.w3schools.com/css/css_list.asp
+https://www.w3schools.com/css/css_float.asp

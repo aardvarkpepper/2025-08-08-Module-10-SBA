@@ -36,17 +36,18 @@ const App = () => {
   return (
     <FavoritesProvider>
       <div className={`${theme} outercontainer`}>
-        <button onClick={toggleTheme}>Deactivate {theme} mode</button>
+
         <nav>
-          <div className='flexh'>
-            <input type='text' value={recipeNameInput} onChange={handleChangeRecipeNameInput}></input>
-            <button onClick={handleSubmitRecipeNameInput}>Search recipe by name</button>
+          <div className='flexh jc-spacebetween '>
+            <div>
+              <input type='text' value={recipeNameInput} onChange={handleChangeRecipeNameInput}></input>
+              <button onClick={handleSubmitRecipeNameInput}>Search recipe by name</button>
+            </div>
+            <button onClick={toggleTheme}>Deactivate {theme} mode</button>
           </div>
-          <ul>
-            <li><Link to="/">Home Page</Link></li>
-            {/* <li><Link to="/category/:categoryName">Category Page</Link></li>
-          <li><Link to="/recipe/:recipeID">Recipe Detail Page</Link></li> */}
-            <li><Link to="/favorites">Favorites Page</Link></li>
+          <ul className='flexh'>
+            <li className={`${theme} li-nav`}><Link to="/"><span className={theme}>Home Page</span></Link></li>  
+            <li className={`${theme} li-nav`}><Link to="/favorites"><span className={theme}>Favorites Page</span></Link></li>
           </ul>
         </nav>
         <Routes>
