@@ -6,9 +6,9 @@ export const useLocalStorage = <T>(key: string, initialValue: T) => {
   useEffect(() => {
     const storedData = localStorage.getItem(key);
     let initialData = initialValue;
-    let hamster = true;
+    // let hamster = true;
     if (storedData) {
-      hamster = false;
+      // hamster = false;
       initialData = JSON.parse(storedData); // There are issues with Typescript using JSON.parse if storedData is a number or simple string such as 'ham'.  Though actually it can't be a number as it came from localStorage of course.  But anyways, it throws an error and stops execution, or so it seems.  But in this implementation there's no need to worry about these things, as it's being used with 'Favorites' which is always an array of strings that are re-casted numbers.  Er, object.
     }
     //console.log(`uLS invoked, attempting to retrieve.  ${hamster ? 'No stored data.' : 'Stored data retrieved.'}`);

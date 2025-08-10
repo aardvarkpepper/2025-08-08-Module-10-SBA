@@ -109,4 +109,6 @@ Lookup full recipe details by ID: https://www.themealdb.com/api/json/v1/1/lookup
 Search meal by name: https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
 
 Focus on deliverables, or whatever it's called when writing one bit of code at a time where results can be visualized.
+
+note to self:  delete all
  */

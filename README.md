@@ -39,3 +39,7 @@ Trash can icon from Google Material Design
 
 https://fonts.google.com/icons
 https://create-react-app.dev/docs/adding-images-fonts-and-files/
+
+Loading spinner from CSSLoaders.github.io
+
+https://cssloaders.github.io/

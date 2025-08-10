@@ -58,6 +58,7 @@ export const useFetch = (url: string, options?: RequestInit) => {
     };
  
     fetchData();
+    // setLoading(false);
  
     // Cleanup function
     return () => {

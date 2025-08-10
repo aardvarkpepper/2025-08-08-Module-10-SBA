@@ -3,7 +3,7 @@ import { FavoriteContext } from "../../contexts/contexts";
 import trashIcon from "../../assets/trashIcon.png";
 
 export const FavoritesPage = () => {
-  const { favoriteIDSet, addRecipe, removeRecipe, isListedInFavorites } = useContext(FavoriteContext);
+  const { favoriteIDSet, removeRecipe } = useContext(FavoriteContext);
 
   const favoriteRecipes = Object.entries(favoriteIDSet);
 

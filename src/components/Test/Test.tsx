@@ -24,8 +24,8 @@ export const Test = () => {
     <div>
       <div>{JSON.stringify(favoriteIDSet)}</div>
       <div>{checkItem}</div>
-      <button onClick={(() => addRecipe('ham'))}>Add ham</button>
-      <button onClick={(() => addRecipe('ster'))}>Add ster</button>
+      {/* <button onClick={(() => addRecipe('ham'))}>Add ham</button>
+      <button onClick={(() => addRecipe('ster'))}>Add ster</button> */}
       <button onClick={(() => removeRecipe('ster'))}>Remove ster</button>
       <button onClick={(() => handleCheck())}>Is ster</button>
       <button onClick={() => handleClear()}>Clear Data</button>

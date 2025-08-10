@@ -3,35 +3,18 @@ import { Link } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch';
 
 export const HomePage = () => {
-  // const [fetchedData, setFetchedData] = useState(null);
-
-  // or could useEffect
-  // const fetchData = async() => {
-  //   const { data, loading, error } = useFetch(`https://www.themealdb.com/api/json/v1/1/categories.php`)
-  //   console.log(`HomePage`, JSON.stringify(data));
-  //   setFetchedData(data);
-  // }
-
-  // setFetchedData(data);
-
-  //   console.log(`HomePage`, JSON.stringify(data));
-  //   if (loading) return <div>Loadng</div>;
-  //   if (error) return <div>Error: {error.message}</div>;
-  //   if (!data.categories) return <div>Data or categories not found.</div>
 
   const { data, loading, error } = useFetch(`https://www.themealdb.com/api/json/v1/1/categories.php`);
   if (loading) {
-    console.log('HomePage loading')
-    return <div>Loading</div>;
-  }
-  if (error) {
-    console.log('HomePage error')
+    return <span className='loader'></span>
+  } else if (error) {
     return <div>Error: {error.message}</div>;
+  } else if (!data) {
+    return <span className='loader'></span>;
   }
-  if (!data?.categories) {
-    console.log('Homepage data or categories not found.')
-    return <div>Data or categories not found.</div>;
-  }
+  // else if (!data) {
+  //   return <div>Data or categories not found.</div>;
+  // }
 
   return (
     <div>

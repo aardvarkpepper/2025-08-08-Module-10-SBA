@@ -13,20 +13,18 @@ export const RecipeDetailPage = () => {
   const { data, loading, error } = useFetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`);
 
   //console.log('RDP attempting fetch', `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`)
-
   if (loading) {
-    console.log('RecipeDetailPage loading')
-    return <div>Loading</div>;
-  }
-  if (error) {
-    console.log('RecipeDetailPage error')
-    console.log(`RecipeDetailPage data: ${JSON.parse(data)}`);
+    return <span className='loader'></span>
+  } else if (error) {
     return <div>Error: {error.message}</div>;
+  } else if (!data) {
+    return <span className='loader'></span>;
+  } else if (data.meals === null) {
+    return <div>The recipe could not be found.</div>
   }
-  if (!data?.meals) {
-    console.log('RecipeDetailPage data or meals not found.')
-    return <div>Data or recipe detail not found.</div>;
-  }
+  // else if (!data) {
+  //   return <div>Data or categories not found.</div>;
+  // }
 
   const mealRef = data.meals[0];
   console.log(`RDP`, JSON.stringify(data));
