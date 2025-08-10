@@ -12,9 +12,9 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 export const FavoritesProvider = ({ children }: React.PropsWithChildren) => {
   const [favoriteIDSet, setFavoriteIDSet] = useLocalStorage('favoriteRecipes', {});
 
-  const addRecipe = (recipeID: string) => {
+  const addRecipe = (recipeID: string, recipeDescription: string) => {
     setFavoriteIDSet((prev: any) => {
-      return {...prev, [recipeID]: true};
+      return {...prev, [recipeID]: recipeDescription};
     });
   };
 

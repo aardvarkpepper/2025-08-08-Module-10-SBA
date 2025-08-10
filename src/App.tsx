@@ -5,6 +5,7 @@ import { FavoritesProvider } from './providers/FavoritesProvider';
 import { Test } from './components/Test/Test';
 
 import { CategoryPage } from './pages/CategoryPage/CategoryPage';
+import { FavoritesPage } from './pages/FavoritesPage/FavoritesPage';
 import { HomePage } from './pages/HomePage/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import { RecipeDetailPage } from './pages/RecipeDetailPage/RecipeDetailPage';
@@ -25,28 +26,28 @@ const App = () => {
       <div className={`${theme}`}>
         <button onClick={toggleTheme}>Deactivate {theme} mode</button>
         <Test />
-      </div>
-      <nav>
-        <div>
-          <input type='text'></input>
-          <button>Search recipe by name</button>
-        </div>
-        <ul>
-          <li><Link to="/">Home Page</Link></li>
-          {/* <li><Link to="/category/:categoryName">Category Page</Link></li>
+
+        <nav>
+          <div>
+            <input type='text'></input>
+            <button>Search recipe by name</button>
+          </div>
+          <ul>
+            <li><Link to="/">Home Page</Link></li>
+            {/* <li><Link to="/category/:categoryName">Category Page</Link></li>
           <li><Link to="/recipe/:recipeID">Recipe Detail Page</Link></li> */}
-          <li><Link to="/favorites">Favorites Page</Link></li>
-        </ul>
-      </nav>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/category/:categoryName" element={<CategoryPage />} />
-        <Route path="/recipe/:recipeId" element={<RecipeDetailPage />} />
-        {/* <Route path="/login" element={<LogInButton />} />
-        <Route path="/blog/*" element={<BlogList blogPosts={blogPosts} />} />
-        <Route path="/blog/:id" element={<Blog blogPosts={blogPosts} />} /> */}
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+            <li><Link to="/favorites">Favorites Page</Link></li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/category/:categoryName" element={<CategoryPage />} />
+          <Route path="/recipe/:recipeId" element={<RecipeDetailPage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
+          {/* <Route path="/search/:recipeName" element={<SearchResultsPage />} */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </div>
     </FavoritesProvider >
   )
 }

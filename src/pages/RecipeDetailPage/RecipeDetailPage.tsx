@@ -1,9 +1,14 @@
 import { Link, useParams } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch';
+import { useContext } from 'react';
+import { FavoriteContext } from '../../contexts/contexts';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 export const RecipeDetailPage = () => {
 
   let { recipeId } = useParams();
+
+  const { favoriteIDSet, addRecipe, removeRecipe, isListedInFavorites } = useContext(FavoriteContext);
 
   const { data, loading, error } = useFetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`);
 
@@ -33,6 +38,7 @@ export const RecipeDetailPage = () => {
   return (
     <div>
       <h2>{mealRef.strMeal}</h2>
+      {isListedInFavorites(mealRef.idMeal) ? <button onClick={() => removeRecipe(mealRef.idMeal)}>Remove from Favorites</button>: <button onClick={()=>addRecipe(mealRef.idMeal, mealRef.strMeal)}>Add to Favorites</button>}
       <div>Category: {mealRef.strCategory}</div>
       <div>Area: {mealRef.strArea}</div>
       <div>Instructions: {mealRef.strInstructions}</div>
@@ -42,7 +48,7 @@ export const RecipeDetailPage = () => {
         src={`https://www.youtube.com/embed/${mealRef.strYoutube.slice(32)}`}>
       </iframe>
       <ul>
-        {ingredientArray.map(ingredient => ingredient[0] ? <li key={ingredient[0]}>{ingredient[0]}: {ingredient[1]}</li> : null)}
+        {ingredientArray.map(ingredient => ingredient[0] ? <li key={`${mealRef.idMeal}-${ingredient[0]}`}>{ingredient[0]}: {ingredient[1]}</li> : null)}
       </ul>
     </div>
   )
