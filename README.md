@@ -53,3 +53,10 @@ However, after loading state is set to true, the conditional that triggers based
 I replaced the message with a loading spinner as a workaround, so the user does not experience an odd transition.
 
 I added another message in case a data property return is null, so if the data really is not received, a message displays instead of the loading spinner.
+
+## Setup
+
+Project folder set up from Bash by typing
+
+npm create vite@latest 2025-08-08-Module-10-SBA -- --template react-ts
+After cd 2025-08-08-Module-10-SBA to change into the directory, used npm run dev in bash.  This creates a link that may be copied and pasted into a browser to view the webpage.
